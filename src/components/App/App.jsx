@@ -5,6 +5,8 @@ import {
   Switch
 } from 'react-router-dom';
 
+import styles from './App.scss';
+
 import Home from '../Home/Home.jsx';
 
 const App = () => (

@@ -1,7 +1,7 @@
 {
-  "name": "webpack-react-setup",
+  "name": "A-Day",
   "version": "1.0.0",
-  "description": "template for ReactJS",
+  "description": "Web application - Todo List",
   "main": "index.js",
   "scripts": {
     "watch": "webpack -d --watch",
@@ -40,6 +40,6 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/tojason/A-Day"
   }
 }
