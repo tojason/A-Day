@@ -12,12 +12,19 @@ const config = {
 
   entry: {
     app: [APP_DIR + '/index.jsx'],
-    vendor: ['react', 'react-dom', 'react-router', 'react-router-dom']
+    vendor: ['react', 'react-dom', 'react-router', 'react-router-dom', 'semantic-ui-react']
   },
 
   output: {
     path: BUILD_DIR,
     filename: 'bundle.js'
+  },
+
+  resolve: {
+    alias: {
+      semantic: path.resolve(__dirname, 'node_modules/semantic-ui-react/src/'),
+      icons: path.resolve(__dirname, 'node_modules/semantic-ui-css/themes/default/assets/fonts')
+    }
   },
 
   context: path.join(__dirname, 'src'),
@@ -40,6 +47,10 @@ const config = {
       {
         test: /\.css$/,
         loaders: ['style-loader', 'css-loader?-url', 'postcss-loader']
+      },
+      {
+        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+        loader: 'file-loader'
       }
     ]
   },
