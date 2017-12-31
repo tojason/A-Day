@@ -1,0 +1,19 @@
+// * {
+//   box-shadow: 0px 1px 20px rgba(0,0,0,0.2);
+// }
+
+.Todo {
+  // background-color: #78848F;
+  background-color: violet;
+
+  .ui.fixed.menu + .ui.grid {
+    padding-top: 5em;
+  }
+
+  .ui.main {
+    .ui.header {
+      color: white;
+    } // end .ui.header
+  } // end .ui.main
+
+}

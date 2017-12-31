@@ -6,10 +6,12 @@ import {
 } from 'react-router-dom';
 
 import Home from '../Home/Home.jsx';
+import Todo from '../Todo/Todo.jsx'
 
 const App = () => (
   <Router>
     <Switch>
+      <Route exact path="/todo" component={Todo}/>
       <Route exact path="/" component={Home}/>
     </Switch>
   </Router>

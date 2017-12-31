@@ -10,6 +10,13 @@ import {
   Form,
   Icon
 } from 'semantic-ui-react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Redirect,
+  withRouter
+} from 'react-router-dom'
 
 import styles from './LoginForm.scss';
 
@@ -22,6 +29,8 @@ class LoginForm extends Component {
         username: '',
         password: '',
       },
+      isLogin: false,
+      loginID: null,
     };
 
     this.onChangeUsername = this.onChangeUsername.bind(this);
@@ -42,20 +51,41 @@ class LoginForm extends Component {
   }
 
   handleLogin() {
+    let login = false;
+    let authID = null;
     let user_cred = this.state.user;
+    // dev purpose only
     if (user_cred.username === 'qq' && user_cred.password === 'qq') {
       console.log('login success')
+      login = true
+      authID = user_cred.username
       user_cred = {
         username: '',
         password: '',
       }
+      this.setState({
+        user: user_cred,
+        isLogin: login,
+        loginID: authID,
+      })
     } else {
       user_cred.password = ''
+      this.setState({
+        user: user_cred,
+      })
     }
-    this.setState({ user: user_cred });
   }
 
   render() {
+    const { isLogin, loginID } = this.state;
+    if (isLogin) {
+      return (
+        <Redirect to={{
+            pathname: '/todo',
+            username: loginID,
+          }}/>
+      )
+    }
     return (
       <div className='LoginForm'>
         <Form
