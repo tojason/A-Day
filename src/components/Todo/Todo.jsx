@@ -4,7 +4,12 @@ import {
   Header,
   Menu,
   Grid,
-  Segment
+  Segment,
+  Label,
+  Message,
+  Item,
+  Card,
+  Button,
 } from 'semantic-ui-react'
 import {
   BrowserRouter as Router,
@@ -39,6 +44,15 @@ class Todo extends Component {
       msg = username + ' is login.'
     }
     const { activeItem } = this.state
+    const extra = (
+      <Button.Group
+        widths={3}
+        >
+        <Button basic color='grey'>Pause</Button>
+        <Button basic color='red'>Start</Button>
+        <Button basic color='green'>Done</Button>
+      </Button.Group>
+    )
     return (
       <div className='Todo'>
         <Menu
@@ -80,6 +94,12 @@ class Todo extends Component {
                 >
                 { msg }
               </Header>
+              <Header
+                textAlign='center'
+                as='h1'
+                >
+                12-31-2017
+              </Header>
               <Segment
                 inverted
                 tertiary
@@ -88,20 +108,78 @@ class Todo extends Component {
                 <Grid
                   stretched
                   columns={3}
+                  className='item'
                   >
                   <Grid.Column>
-                    <Segment>1</Segment>
+                    <Segment
+                      className='item-header'
+                      >
+                      <Label
+                        color='teal'
+                        size='tiny'
+                        className='item-category'
+                        >
+                        CS 446
+                      </Label>
+                    </Segment>
+                    <Item.Group>
+                      <Item>
+                        <Item.Content>
+                          <Item.Description>Assignment 1</Item.Description>
+                        </Item.Content>
+                      </Item>
+                    </Item.Group>
                   </Grid.Column>
                   <Grid.Column>
-                    <Segment>1</Segment>
-                    <Segment>2</Segment>
+                    <Segment
+                      className='item-middle upper'
+                      >
+                      <Label
+                        color='pink'
+                        className='item-priority'
+                        >
+                        { 'Priority:' }
+                        <Label.Detail>
+                          {'High'}
+                        </Label.Detail>
+                      </Label>
+                    </Segment>
+                    <div className='item-target-date'>
+                      <div className='left'>
+                        { 'Target Date: ' }
+                      </div>
+                      <div className='right'>
+                        <div className='item-date'>
+                          { '1-1-2018' }
+                        </div>
+                        <div className='item-time'>
+                          { 'Monday 4:00 PM' }
+                        </div>
+                      </div>
+                    </div>
                   </Grid.Column>
                   <Grid.Column>
-                    <Segment>1</Segment>
-                    <Segment>2</Segment>
+                    <Card>
+                      <Card.Content
+                        textAlign='center'
+                        header='Time used: 2 hrs 30 mins'
+                        />
+                      <Card.Content extra>
+                        { extra }
+                      </Card.Content>
+                    </Card>
                   </Grid.Column>
                 </Grid>
               </Segment>
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row>
+            <Grid.Column>
+              <div className='outer outer-item'>
+                <div className="item-col">Left</div>
+                <div className="item-col">Center</div>
+                <div className="item-col">Right</div>
+              </div>
             </Grid.Column>
           </Grid.Row>
         </Grid>

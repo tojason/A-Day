@@ -16,4 +16,85 @@
     } // end .ui.header
   } // end .ui.main
 
-}
+  .ui.item {
+    .column {
+      padding: 0;
+
+      .card {
+        margin: .35em auto;
+      }
+
+      .item-target-date {
+        display: inline-flex;
+        flex-direction: row;
+
+        background-color: lime;
+
+        .left {
+          background-color: green;
+          margin-top: auto;
+          margin-bottom: auto;
+        }
+        .right {
+          background-color: cyan;
+          margin-top: auto;
+          margin-bottom: auto;
+        }
+      }
+
+      .ui.segment {
+        margin-top: 0;
+        margin-bottom: 0;
+        border-radius: 0;
+        box-shadow: none;
+
+        &.item-middle {
+          text-align: center;
+          padding: .5em;
+        }
+
+      }
+
+      .item-header {
+        padding-top: .25em;
+        padding-bottom: .25em;
+        flex-grow: 0;
+      }
+
+      .ui.items {
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+
+        .item {
+          .content {
+            padding-left: 1em;
+            padding-right: 1em;
+            font-size: 1.5em;
+            // background-color: grey;
+
+            .description {
+              margin-top: 0;
+            }
+          } // end .content
+        } // end .item
+      } // end .ui.items
+
+    } // end .column
+  } // end .ui.item
+
+  .row .column {
+    .outer {
+      box-sizing: border-box;
+      border: 2px solid lightyellow;
+      display: flex;
+
+      .item-col {
+        box-sizing: inherit;
+        border: 2px solid green;
+        flex-grow: 1;
+      }
+    }
+  }
+
+} // .Todo
