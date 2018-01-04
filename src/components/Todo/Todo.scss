@@ -27,20 +27,27 @@
       .item-target-date {
         display: inline-flex;
         flex-direction: row;
+        justify-content: center;
 
         background-color: lime;
+        font-size: 1.25em;
+        text-align: center;
 
         .left {
           background-color: green;
-          margin-top: auto;
-          margin-bottom: auto;
         }
         .right {
           background-color: cyan;
+        }
+
+        .left, .right {
+          padding: 0 .5em;
           margin-top: auto;
           margin-bottom: auto;
+          border-radius: .28571429rem;
         }
-      }
+
+      } // end .item-target-date
 
       .ui.segment {
         margin-top: 0;

@@ -146,7 +146,7 @@ class Todo extends Component {
                     </Segment>
                     <div className='item-target-date'>
                       <div className='left'>
-                        { 'Target Date: ' }
+                        { 'Target Date:' }
                       </div>
                       <div className='right'>
                         <div className='item-date'>
