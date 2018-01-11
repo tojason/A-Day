@@ -29,15 +29,16 @@
         flex-direction: row;
         justify-content: center;
 
-        background-color: lime;
+        // background-color: brown;
         font-size: 1.25em;
         text-align: center;
+        margin: .5em .15em;
 
         .left {
-          background-color: green;
+          // background-color: green;
         }
         .right {
-          background-color: cyan;
+          // background-color: lightgreen;
         }
 
         .left, .right {
@@ -59,7 +60,6 @@
           text-align: center;
           padding: .5em;
         }
-
       }
 
       .item-header {

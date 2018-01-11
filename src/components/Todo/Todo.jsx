@@ -116,7 +116,7 @@ class Todo extends Component {
                       >
                       <Label
                         color='teal'
-                        size='tiny'
+                        size='small'
                         className='item-category'
                         >
                         CS 446
