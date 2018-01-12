@@ -55,10 +55,15 @@
         margin-bottom: 0;
         border-radius: 0;
         box-shadow: none;
+        background: none;
+        border: none;
 
         &.item-middle {
-          text-align: center;
-          padding: .5em;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          padding: .25em;
         }
       }
 

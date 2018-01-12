@@ -4,6 +4,8 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
+import * as firebase from "firebase";
+import config from './firebase-config';
 
 import Home from '../Home/Home.jsx';
 import Todo from '../Todo/Todo.jsx'
