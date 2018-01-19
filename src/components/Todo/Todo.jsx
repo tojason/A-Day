@@ -18,6 +18,7 @@ import {
   Redirect,
   withRouter
 } from 'react-router-dom'
+import * as firebase from "firebase";
 
 import styles from './Todo.scss'
 
@@ -27,10 +28,22 @@ class Todo extends Component {
     super(props)
 
     this.state = {
-      activeItem: 'Home'
+      activeItem: 'Home',
+      username: 'empty'
     }
 
     this.handleMenuItemClick = this.handleMenuItemClick.bind(this)
+  }
+
+  componentDidMount() {
+    // async value with the database
+    const db = firebase.database();
+    let username_ref = db.ref().child('username');
+    username_ref.on('value', snap => {
+      this.setState({
+        username: snap.val()
+      });
+    });
   }
 
   handleMenuItemClick(event) {
@@ -38,12 +51,13 @@ class Todo extends Component {
   }
 
   render() {
-    let msg = 'No User Is Login'
-    let username = this.props.location.username
+    let msg = 'No User Is Login';
+    // let username = this.props.location.username;
+    let username = this.state.username;
     if (username) {
-      msg = username + ' is login.'
+      msg = username + ' is login.';
     }
-    const { activeItem } = this.state
+    const { activeItem } = this.state;
     const extra = (
       <Button.Group
         widths={3}
@@ -52,7 +66,7 @@ class Todo extends Component {
         <Button basic color='red'>Start</Button>
         <Button basic color='green'>Done</Button>
       </Button.Group>
-    )
+    );
     return (
       <div className='Todo'>
         <Menu
@@ -184,7 +198,7 @@ class Todo extends Component {
           </Grid.Row>
         </Grid>
       </div>
-    )
+    );
   }
 
 }

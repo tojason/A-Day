@@ -9,9 +9,16 @@ import { render } from 'react-dom';
 // import 'semantic-ui-css/semantic.min.js';
 // import 'semantic-ui-css/semantic.min.css';
 import "!style-loader!css-loader!semantic-ui-css/semantic.min.css";
-import styles from './styles/main.scss'
+import styles from './styles/main.scss';
+
+// database setup
+import * as firebase from "firebase";
+import config from './firebase-config';
 
 import App from './components/App/App.jsx';
+
+firebase.initializeApp(config);
+const auth = firebase.auth();
 
 render(
   <App />,
