@@ -34,6 +34,8 @@
         text-align: center;
         margin: .5em .15em;
 
+        border-top: 1px solid white;
+
         .left {
           // background-color: green;
         }
@@ -58,7 +60,7 @@
         background: none;
         border: none;
 
-        &.item-middle {
+        &.upper {
           display: flex;
           flex-direction: row;
           justify-content: center;
@@ -92,6 +94,10 @@
         } // end .item
       } // end .ui.items
 
+      &.item-middle {
+        border-left: 1px solid white;
+      }
+
     } // end .column
   } // end .ui.item
 
@@ -107,6 +113,6 @@
         flex-grow: 1;
       }
     }
-  }
+  } // end .row .column
 
 } // .Todo

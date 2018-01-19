@@ -25,14 +25,14 @@ import styles from './Todo.scss'
 class Todo extends Component {
 
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       activeItem: 'Home',
       username: 'empty'
-    }
+    };
 
-    this.handleMenuItemClick = this.handleMenuItemClick.bind(this)
+    this.handleMenuItemClick = this.handleMenuItemClick.bind(this);
   }
 
   componentDidMount() {
@@ -51,6 +51,21 @@ class Todo extends Component {
   }
 
   render() {
+    const todo_item = {
+      category: 'CS446',
+      name: 'Assignment 1',
+      description: null,
+      priority: 'high',
+      targetDate: {
+        time: '4:00 PM',
+        date: '1-1-2018',
+      },
+      status: 'created',
+      timeCreated: null,
+      timeStart: null,
+      timeEnd: null,
+      totalTime: null,
+    };
     let msg = 'No User Is Login';
     // let username = this.props.location.username;
     let username = this.state.username;
@@ -139,14 +154,16 @@ class Todo extends Component {
                     <Item.Group>
                       <Item>
                         <Item.Content>
-                          <Item.Description>Assignment 1</Item.Description>
+                          <Item.Description>
+                            { todo_item.name }
+                          </Item.Description>
                         </Item.Content>
                       </Item>
                     </Item.Group>
                   </Grid.Column>
-                  <Grid.Column>
+                  <Grid.Column className='item-middle'>
                     <Segment
-                      className='item-middle upper'
+                      className='upper'
                       >
                       <Label
                         color='pink'
@@ -154,7 +171,7 @@ class Todo extends Component {
                         >
                         { 'Priority:' }
                         <Label.Detail>
-                          {'High'}
+                          { todo_item.priority }
                         </Label.Detail>
                       </Label>
                     </Segment>
@@ -164,10 +181,10 @@ class Todo extends Component {
                       </div>
                       <div className='right'>
                         <div className='item-date'>
-                          { '1-1-2018' }
+                          { todo_item.targetDate.date }
                         </div>
                         <div className='item-time'>
-                          { 'Monday 4:00 PM' }
+                          { 'Monday ' + todo_item.targetDate.time }
                         </div>
                       </div>
                     </div>
